@@ -1,0 +1,16 @@
+.booster {
+	&__wrapper {
+		display: flex;
+		padding-left: var(--pad-side);
+		padding-right: var(--pad-side);
+		gap: var(--gap-cards);
+		box-sizing: border-box;
+		transition: all 0.1s;
+	}
+
+	&__card {
+		&:last-child {
+			padding-right: calc(var(--pad-side) - 10px);
+		}
+	}
+}
