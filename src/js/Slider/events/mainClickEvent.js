@@ -1,3 +1,5 @@
+import { PopupGallery } from '../../PopupGallery'
+
 export function mainClickEvent(context) {
     context.slider.addEventListener('click', (ev) => {
         if (!ev.target.closest('.swiper-slide_btn')) return
@@ -6,8 +8,6 @@ export function mainClickEvent(context) {
             ev.target.closest('.swiper-slide').dataset.swiperSlideIndex
         )
 
-        console.log(context.products[slideNumber])
-
-        context.products[slideNumber].click()
+        context.popupGallery = new PopupGallery(context.data[slideNumber])
     })
 }

@@ -1,0 +1,15 @@
+<div class="swiper-wrapper">
+    ${this.data.images .map( (img) => `` ) .join(' ')}
+</div>
+
+<div class="swiper-slide">
+    <div class="swiper-zoom-container">
+        <img
+            height="181"
+            width="${window.innerWidth - 20}"
+            src="${img}"
+            alt="Очень красивые пейзажи"
+            class="swiper-slide popup__slide"
+        />
+    </div>
+</div>

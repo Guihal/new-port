@@ -1,0 +1,108 @@
+.popup {
+    --f-family: Arial, sans-serif;
+
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(24px);
+    background: #000000b2;
+    overflow-y: auto;
+    padding-top: 60px !important;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__swiper {
+        margin-bottom: 20px;
+        width: 100%;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        min-height: 180px;
+    }
+
+    &__prev,
+    &__next {
+        z-index: 10;
+        position: absolute;
+        top: calc(50% - 12.5px);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        backdrop-filter: blur(4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff33;
+    }
+
+    &__next {
+        right: 15px;
+    }
+
+    &__prev {
+        left: 15px;
+    }
+
+    &__slide {
+        display: flex;
+
+        img {
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+
+    &__close {
+        z-index: 1001;
+        position: fixed;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #ffffff33;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 10px;
+        top: 10px;
+    }
+
+    &__wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    &__title {
+        font-family: var(--f-family);
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: -0.03em;
+        color: #fff;
+    }
+
+    &__descr {
+        font-family: var(--f-family);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+        color: #fff;
+    }
+}
