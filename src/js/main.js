@@ -1,4 +1,4 @@
-import "../scss/main.scss";
-import { sliderInit } from "./slider/sliderInit";
+import '../scss/main.scss'
+import { sliderInit } from './Slider/index'
 
-sliderInit();
+sliderInit()

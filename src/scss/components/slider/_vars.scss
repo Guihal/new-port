@@ -1,18 +1,36 @@
 .slider {
-	// текстовые переменные
-	--f-family: Arial, sans-serif;
-	--f-size-card: 12px;
-	--f-size-descr: 14px;
-	--f-size-cat: 12px;
-	--f-size-city: 16px;
-	--f-size-title: 60px;
-	// отступы
+    // текстовые переменные
+    --f-family: Arial, sans-serif;
+    --f-size-card: 12px;
+    --f-size-descr: 14px;
+    --f-size-cat: 12px;
+    --f-size-id: 12px;
+    --f-size-city: 16px;
+    --f-size-title: 60px;
+    --f-color: #000000;
+    --f-color80: #000000cc;
+    --f-color60: #00000099;
+    --f-color40: #00000066;
 
-	--gap-cards: 10px;
-	--gap-main: 20px;
-	--mrgn-main-slider: 30px;
-	--mrgn-cat: 40px;
+    // отступы
+    --gap-cards: 10px;
+    --gap-main: 20px;
+    --mrgn-main-slider: 30px;
+    --mrgn-cat: 40px;
+    --mrgn-btn: 40px;
+    --mrgn-city: 45px;
 
-	//паддинги
-	--pad-side: 30px;
+    //паддинги
+    --pad-side: 30px;
+
+    @media screen and (max-width: 768px) {
+        --pad-side: 10px;
+        --gap-cards: 5px;
+
+        --f-size-title: 30px;
+        --f-size-city: 14px;
+
+        --mrgn-cat: 10px;
+        --mrgn-main-slider: 20px;
+    }
 }

@@ -1,6 +1,10 @@
-@import "vars";
+@import 'vars';
+@import 'components/tildaBlock';
 
 .slider {
-	@import "booster/main";
-	// @import 'mainSlider/main';
+    @import 'components/booster';
+    @import 'components/swiper';
+    @import 'components/gallery';
+
+    // @import 'mainSlider/main';
 }
