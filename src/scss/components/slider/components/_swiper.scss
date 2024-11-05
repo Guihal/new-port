@@ -40,6 +40,7 @@
             box-shadow: none !important;
             cursor: pointer;
             align-items: center;
+            font-family: var(--f-family);
 
             svg path {
                 transition: all 0.3s;
@@ -62,6 +63,7 @@
         &__city {
             font-size: var(--f-size-city);
             color: var(--f-color80);
+            font-family: var(--f-family);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -87,6 +89,7 @@
             line-height: 100%;
             letter-spacing: -0.03em;
             color: var(--f-color);
+            font-family: var(--f-family);
         }
 
         &__descr {
@@ -94,9 +97,11 @@
             font-size: var(--f-size-descr);
             font-weight: 400;
             line-height: 120%;
+            font-family: var(--f-family);
 
             &_short {
                 color: var(--f-color);
+                font-family: var(--f-family);
                 font-size: var(--f-size-cat);
                 font-weight: 400;
                 line-height: 120%;

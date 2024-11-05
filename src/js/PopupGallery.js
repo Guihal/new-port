@@ -81,7 +81,7 @@ export class PopupGallery {
     }
 
     destroy() {
-        this.this.swiper.destroy()
+        this.swiper.destroy()
         this.close.removeEventListener('click', this.#closeEvent)
         this.gallery.remove()
     }

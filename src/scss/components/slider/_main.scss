@@ -3,6 +3,7 @@
 @import './components/popupGallery';
 
 .slider {
+    overflow-x: hidden;
     @import 'components/booster';
     @import 'components/swiper';
     @import 'components/gallery';

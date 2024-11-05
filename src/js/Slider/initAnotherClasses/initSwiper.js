@@ -1,7 +1,7 @@
 export function initSwiper(context) {
     context.swiper = new Swiper(`${context.query} .swiper`, {
         slidesPerView: 1,
-        allowTouchMove: false,
+        // allowTouchMove: false,
         loop: true,
 
         breakpoints: {
