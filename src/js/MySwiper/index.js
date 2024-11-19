@@ -4,12 +4,13 @@ export class MySwiper {
     trfRegExp = /([-0-9.]+(?=px))/
     grabClass = 'grabbing'
 
-    animSpeed = -0.3
-    animSpeedAbs = Math.abs(this.animSpeed)
+    animSpeed = -0.1
+    animSpeedScaled = this.animSpeed
+    animSpeedAbs = Math.abs(this.animSpeedScaled)
 
     animSpeedAccelerateStart = -0.00002
     animSpeedAccelerate = this.animSpeedAccelerateStart
-    animSpeedAccelerated = this.animSpeed
+    animSpeedAccelerated = this.animSpeedScaled
 
     posStart
     posEnd
@@ -74,7 +75,7 @@ export class MySwiper {
         document.documentElement.addEventListener('touchend', this._endSwipe)
     }
 
-    _swiping = (ev) => {
+    _swiping = throttle((ev) => {
         this.posEnd = this._getPos(ev)
 
         const deltaPos = this.posEnd.x - this.posStart.x
@@ -94,7 +95,7 @@ export class MySwiper {
         this.posStart = this.posEnd
 
         this.wrapper.style.translate = `${delta}px`
-    }
+    }, 4)
 
     _endSwipe = (ev) => {
         this.isDragging = false
@@ -238,7 +239,7 @@ export class MySwiper {
         if (withAccelerate) {
             this.animSpeedAccelerated = 0
         } else {
-            this.animSpeedAccelerated = this.animSpeed
+            this.animSpeedAccelerated = this.animSpeedScaled
         }
 
         const callback = () => {

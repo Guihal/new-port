@@ -39,8 +39,6 @@ export class PopupGallery {
         <div class="popup__next"><svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.25 6L3.75 3.5L1.25 1" stroke="white"/></svg></div>
     </div>
     <div class="popup__wrapper">
-        <div class="popup__title">${this.data.title}</div>
-        <div class="popup__descr">${this.data.descr}</div>
     </div>
         `
     }

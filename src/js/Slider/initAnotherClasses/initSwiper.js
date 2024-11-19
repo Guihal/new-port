@@ -3,14 +3,6 @@ export function initSwiper(context) {
         slidesPerView: 1,
         // allowTouchMove: false,
         loop: true,
-
-        breakpoints: {
-            240: {
-                spaceBetween: 10,
-            },
-            768: {
-                spaceBetween: 30,
-            },
-        },
+        spaceBetween: 24,
     })
 }

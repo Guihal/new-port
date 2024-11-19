@@ -1,5 +1,7 @@
 .booster {
     width: 100%;
+    z-index: 5;
+    position: relative;
     // overflow-x: scroll;
 
     &__wrapper {
@@ -16,9 +18,9 @@
 
     &__img-con {
         overflow: hidden;
-        border-radius: 6.85px;
+        border-radius: var(--rad-bstr);
         height: fit-content;
-        margin-bottom: 2px;
+        margin-bottom: var(--gap-booster-card);
         display: flex;
 
         img {
@@ -41,34 +43,43 @@
             font-family: var(--f-family);
         }
 
-        @media screen and (max-width: 768px) {
-            &[data-size='1'] {
-                img {
-                    width: 72px;
-                    height: 89px;
-                }
+        &[data-size='1'] {
+            img {
+                width: var(--s1w);
+                height: var(--s1h);
             }
+        }
 
-            &[data-size='2'] {
-                img {
-                    width: 53px;
-                    height: 71px;
-                }
+        &[data-size='2'] {
+            img {
+                width: var(--s2w);
+                height: var(--s2h);
             }
+        }
 
-            &[data-size='3'] {
-                img {
-                    width: 72px;
-                    height: 54px;
-                }
+        &[data-size='3'] {
+            img {
+                width: var(--s3w);
+                height: var(--s3h);
             }
+        }
 
-            &[data-size='4'] {
-                img {
-                    width: 89px;
-                    height: 71px;
-                }
+        &[data-size='4'] {
+            img {
+                width: var(--s4w);
+                height: var(--s4h);
             }
+        }
+
+        @media screen and (max-width: 960px) {
+            --s1w: calc(var(--scale) * 72px);
+            --s1h: calc(var(--scale) * 89px);
+            --s2w: calc(var(--scale) * 53px);
+            --s2h: calc(var(--scale) * 71px);
+            --s3w: calc(var(--scale) * 72px);
+            --s3h: calc(var(--scale) * 54px);
+            --s4w: calc(var(--scale) * 89px);
+            --s4h: calc(var(--scale) * 71px);
         }
 
         @media (hover: hover) {

@@ -1,23 +1,25 @@
 .swiper {
     font-family: var(--f-family);
-    margin-bottom: var(--mrgn-main-slider);
+    padding-bottom: var(--mrgn-main-slider);
     padding-left: var(--pad-side);
     padding-right: var(--pad-side);
     overflow: visible;
+    transition: all 0.3s;
 
     &-slide {
+        cursor: grab;
         display: flex;
         gap: var(--gap-main);
 
         &__text-wrapper {
-            min-width: 270px;
+            min-width: calc(var(--scale) * 270px);
             width: 25.6%;
             height: auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 960px) {
                 width: 100%;
                 min-width: 100%;
             }
@@ -25,15 +27,15 @@
 
         &_btn {
             display: none;
-            gap: 10px;
-            font-size: 12px;
+            gap: calc(var(--scale) * 10px);
+            font-size: calc(var(--scale) * 12px);
             font-weight: 700;
             line-height: 100%;
-            padding: 14px 20px !important;
+            padding: calc(var(--scale) * 14px) calc(var(--scale) * 20px) !important;
             background: var(--f-color) !important;
             color: #fff !important;
-            border-radius: 50px !important;
-            margin-top: 15px !important;
+            border-radius: calc(var(--scale) * 50px) !important;
+            margin-top: calc(var(--scale) * 15px) !important;
             text-transform: uppercase !important;
             transition: all 0.3s !important;
             border: none !important;
@@ -46,7 +48,7 @@
                 transition: all 0.3s;
             }
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 960px) {
                 display: flex !important;
             }
 
@@ -66,19 +68,19 @@
             font-family: var(--f-family);
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: calc(var(--scale) * 5px);
             font-weight: 400;
             line-height: 100%;
 
             &::before {
                 content: '';
-                width: 8px;
-                height: 8px;
+                width: calc(var(--scale) * 8px);
+                height: calc(var(--scale) * 8px);
                 border-radius: 50%;
                 background: var(--f-color80);
             }
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 960px) {
                 margin-bottom: var(--mrgn-city);
             }
         }
@@ -94,6 +96,7 @@
 
         &__descr {
             color: var(--f-color60);
+
             font-size: var(--f-size-descr);
             font-weight: 400;
             line-height: 120%;
@@ -109,8 +112,16 @@
             }
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 960px) {
             flex-direction: column;
+
+            &_btn {
+                display: flex;
+            }
+
+            &__descr {
+                max-width: calc(var(--scale) * 350px);
+            }
         }
     }
 }

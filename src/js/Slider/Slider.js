@@ -24,6 +24,7 @@ export class Slider {
         this.#initMySwiper()
         this.#initGallery()
         this.#mainClickEvent()
+        this.#changeHeightSlide()
     }
 
     // init methods
@@ -33,6 +34,8 @@ export class Slider {
 
         this.sliderDataBlock.after(this.slider)
         this.sliderDataBlock.remove()
+        this.swiperBlock = this.slider.querySelector('.swiper')
+        this.swiperWrapper = this.slider.querySelector('.swiper-wrapper')
     }
 
     #getSlider() {
@@ -59,5 +62,19 @@ export class Slider {
 
     #mainClickEvent() {
         mainClickEvent(this)
+    }
+
+    #changeHeightSlide() {
+        this.swiper.on('slideChange', () => {
+            setTimeout(() => {
+                const slideActive = this.swiperBlock.querySelector(
+                    '.swiper-slide-active'
+                )
+
+                this.swiperBlock.style.marginBottom = `${
+                    slideActive.offsetHeight - this.swiperWrapper.offsetHeight
+                }px`
+            }, 50)
+        })
     }
 }

@@ -1,10 +1,40 @@
 .gallery {
-    border-radius: 10px;
+    border-radius: var(--rad-gallery);
     overflow: hidden;
-    height: 66.5vh;
-    min-height: 300px;
+    height: calc(var(--scale) * 350px);
+    min-height: var(--mxh-g);
     position: relative;
     width: 100%;
+
+    &__nav {
+        --size: calc(var(--scale) * 25px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: var(--size);
+        height: var(--size);
+        top: calc((100% - var(--size)) / 2);
+        position: absolute;
+        z-index: 6;
+        left: auto;
+        right: auto;
+        cursor: pointer;
+        background: #fff;
+
+        svg {
+            width: calc(var(--scale) * 5px);
+            height: calc(var(--scale) * 7px);
+        }
+    }
+
+    &__prev {
+        left: calc(var(--scale) * 10px);
+    }
+
+    &__next {
+        right: calc(var(--scale) * 10px);
+    }
 
     &__img {
         object-fit: cover;
@@ -45,8 +75,8 @@
     }
 
     &__pag {
-        width: 40px;
-        height: 2px;
+        width: var(--w-pag);
+        height: var(--h-pag);
         border-radius: 1px;
         transition: all 0.3s;
         cursor: pointer;
@@ -60,30 +90,31 @@
 
         &-con {
             display: flex;
-            gap: 5px;
-            width: calc(100% - 20px);
+            gap: var(--gap-pag);
+            width: var(--mxw-pag);
             position: absolute;
-            left: 10px;
-            bottom: 8.5px;
+            left: var(--left-pag);
+            justify-content: center;
+            bottom: var(--btm-pag);
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 960px) {
                 display: none;
             }
         }
     }
 
-    @media screen and (max-width: 768px) {
-        height: 370px;
+    @media screen and (max-width: 960px) {
+        height: calc(var(--scale) * 270px);
         min-height: auto;
         width: 100%;
         min-width: 100%;
-    }
 
-    @media screen and (max-width: 468px) {
-        height: 270px;
+        &__nav {
+            display: none;
+        }
     }
 
     @media screen and (max-width: 368px) {
-        height: 170px;
+        height: calc(var(--scale) * 170px);
     }
 }

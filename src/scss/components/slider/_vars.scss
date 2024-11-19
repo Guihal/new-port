@@ -1,36 +1,72 @@
+:root {
+    // автоскейл
+    --scale: 1;
+}
+
 .slider {
     // текстовые переменные
     --f-family: 'DINCondensed', Arial, sans-serif;
-    --f-size-card: 12px;
-    --f-size-descr: 14px;
-    --f-size-cat: 12px;
-    --f-size-id: 12px;
-    --f-size-city: 16px;
-    --f-size-title: 60px;
+    --f-size-card: calc(var(--scale) * 12px);
+    --f-size-descr: calc(var(--scale) * 14px);
+    --f-size-cat: calc(var(--scale) * 12px);
+    --f-size-id: calc(var(--scale) * 12px);
+    --f-size-city: calc(var(--scale) * 16px);
+    --f-size-title: calc(var(--scale) * 60px);
     --f-color: #000000;
     --f-color80: #000000cc;
     --f-color60: #00000099;
     --f-color40: #00000066;
 
     // отступы
-    --gap-cards: 10px;
-    --gap-main: 20px;
-    --mrgn-main-slider: 30px;
-    --mrgn-cat: 40px;
-    --mrgn-btn: 40px;
-    --mrgn-city: 45px;
+    --gap-cards: calc(var(--scale) * 10px);
+    --gap-main: calc(var(--scale) * 20px);
+    --gap-booster-card: calc(var(--scale) * 2px);
+    --gap-pag: calc(var(--scale) * 5px);
+    --mrgn-main-slider: calc(var(--scale) * 30px);
+    --mrgn-cat: calc(var(--scale) * 40px);
+    --mrgn-btn: calc(var(--scale) * 40px);
+    --mrgn-city: calc(var(--scale) * 45px);
 
-    //паддинги
-    --pad-side: 30px;
+    // паддинги
+    --pad-side: calc(var(--scale) * 24px);
 
-    @media screen and (max-width: 768px) {
-        --pad-side: 10px;
-        --gap-cards: 5px;
+    // размеры карточек
+    --s1w: calc(var(--scale) * 125px);
+    --s1h: calc(var(--scale) * 156px);
+    --s2w: calc(var(--scale) * 94px);
+    --s2h: calc(var(--scale) * 125px);
+    --s3w: calc(var(--scale) * 125px);
+    --s3h: calc(var(--scale) * 94px);
+    --s4w: calc(var(--scale) * 156px);
+    --s4h: calc(var(--scale) * 125px);
 
-        --f-size-title: 30px;
-        --f-size-city: 14px;
+    // радиусы
+    --rad-bstr: calc(var(--scale) * 6.85px);
+    --rad-gallery: calc(var(--scale) * 10px);
 
-        --mrgn-cat: 10px;
-        --mrgn-main-slider: 20px;
+    // высоты
+    --mxh-g: calc(var(--scale) * 300px);
+    --mxw-pag: calc(100% - var(--left-pag) * 2);
+
+    // позиции
+    --left-pag: calc(var(--scale) * 10px);
+    --btm-pag: calc(var(--scale) * 8.5px);
+
+    // размеры
+    --w-pag: calc(var(--scale) * 40px);
+    --h-pag: calc(var(--scale) * 2px);
+
+    @media screen and (max-width: 960px) {
+        --gap-cards: calc(var(--scale) * 5px);
+
+        --f-size-title: calc(var(--scale) * 30px);
+        --f-size-city: calc(var(--scale) * 14px);
+
+        --mrgn-cat: calc(var(--scale) * 10px);
+        --mrgn-main-slider: calc(var(--scale) * 20px);
+    }
+
+    * {
+        text-wrap: pretty;
     }
 }
